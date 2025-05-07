@@ -1,0 +1,62 @@
+SimpleCalculator apex class code:
+
+
+public class SimpleCalculator {
+    
+    // Method for addition
+    public static Decimal add(Decimal num1, Decimal num2) {
+        return num1 + num2;
+    }
+
+    // Method for subtraction
+    public static Decimal subtract(Decimal num1, Decimal num2) {
+        return num1 - num2;
+    }
+
+    // Method for multiplication
+    public static Decimal multiply(Decimal num1, Decimal num2) {
+        return num1 * num2;
+    }
+
+    // Method for division
+    public static Decimal divide(Decimal num1, Decimal num2) {
+       
+        return num1 / num2;
+    }
+
+    // Method to process a simple operation
+    public static void processOperation(Decimal num1, Decimal num2, String operation) {
+        Decimal result;
+        
+        if (operation == 'add') {
+            result = add(num1, num2);
+            System.debug('Addition Result: ' + result);
+        } else if (operation == 'subtract') {
+            result = subtract(num1, num2);
+            System.debug('Subtraction Result: ' + result);
+        } else if (operation == 'multiply') {
+            result = multiply(num1, num2);
+            System.debug('Multiplication Result: ' + result);
+        } else if (operation == 'divide') {
+            try {
+                result = divide(num1, num2);
+                System.debug('Division Result: ' + result);
+            } catch (Exception e) {
+                System.debug('Error: ' + e.getMessage());
+            }
+        } else {
+            System.debug('Invalid operation.');
+        }
+    }
+}
+
+
+open execute anonymous window:
+// Simulating user input
+Decimal num1 = 10;
+Decimal num2 = 5;
+String operation = 'add';  // Choose 'add', 'subtract', 'multiply', or 'divide'
+
+// Call the processOperation method to perform the operation
+SimpleCalculator.processOperation(num1, num2, operation);
+

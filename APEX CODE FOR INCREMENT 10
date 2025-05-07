@@ -1,0 +1,16 @@
+Code for Increment by 10:
+
+public class MySampleApexClass {
+   public Double myValue=0;
+    
+    public Double getUpdatedValue(){
+        myValue = myValue+10;
+        return myValue;
+    }
+}
+
+open execute anonymous window:
+MySampleApexClass m = new MySampleApexClass();
+Double myValue = m.getUpdatedValue();
+system.debug('valued='+myValue);
+
